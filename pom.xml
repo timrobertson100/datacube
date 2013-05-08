@@ -9,7 +9,7 @@
 
   <groupId>com.urbanairship</groupId>
   <artifactId>datacube</artifactId>
-  <version>1.2.4-SNAPSHOT</version>
+  <version>1.2.4-GIT-20130508</version>
   <packaging>jar</packaging>
 
   <name>datacube</name>
@@ -112,7 +112,7 @@
         </property>
       </activation>
       <properties>
-        <hbaseVersion>0.94.2-cdh4.2.0</hbaseVersion>
+        <hbaseVersion>0.94.2-cdh4.2.1</hbaseVersion>
       </properties>
     </profile>
 
@@ -126,8 +126,8 @@
         </property>
       </activation>
       <properties>
-        <hadoopVersion>2.0.0-cdh4.2.0</hadoopVersion>
-        <hadoopMRVersion>2.0.0-mr1-cdh4.2.0</hadoopMRVersion>
+        <hadoopVersion>2.0.0-cdh4.2.1</hadoopVersion>
+        <hadoopMRVersion>2.0.0-mr1-cdh4.2.1</hadoopMRVersion>
       </properties>
     </profile>
     
