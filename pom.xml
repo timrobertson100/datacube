@@ -9,7 +9,7 @@
 
   <groupId>com.urbanairship</groupId>
   <artifactId>datacube</artifactId>
-  <version>1.2.4-SNAPSHOT</version>
+  <version>1.2.4-GIT-20130903</version>
   <packaging>jar</packaging>
 
   <name>datacube</name>
@@ -59,7 +59,7 @@
         </property>
       </activation>
       <properties>
-        <hbaseVersion>0.94.0</hbaseVersion>
+        <hbaseVersion>0.94.2-cdh4.2.1</hbaseVersion>
       </properties>
     </profile>
 
@@ -73,7 +73,8 @@
         </property>
       </activation>
       <properties>
-        <hadoopVersion>1.0.3</hadoopVersion>
+        <hadoopVersion>2.0.0-cdh4.2.1</hadoopVersion>
+        <hadoopMRVersion>2.0.0-mr1-cdh4.2.1</hadoopMRVersion>
       </properties>
     </profile>
     
@@ -216,7 +217,7 @@
   </build>
 
   <!-- Uncomment this repo to build against CDH hbase if desired -->
-  <!-- <repositories>
+  <repositories>
     <repository>
       <id>repository.cloudera.com</id>
       <url>https://repository.cloudera.com/content/repositories/releases/</url>
@@ -224,7 +225,7 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
-  </repositories> -->
+  </repositories> 
 
   <dependencies>
     <dependency>
@@ -274,7 +275,6 @@
       <artifactId>hbase</artifactId>
       <version>${hbaseVersion}</version>
     </dependency>
-
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase</artifactId>
@@ -282,20 +282,35 @@
       <scope>test</scope>
       <classifier>tests</classifier>
     </dependency>
-
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-test</artifactId>
-      <version>${hadoopVersion}</version>
+      <version>${hadoopMRVersion}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-core</artifactId>
+      <version>${hadoopMRVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common</artifactId>
       <version>${hadoopVersion}</version>
       <scope>provided</scope>
     </dependency>
-
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-hdfs</artifactId>
+      <version>${hadoopVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-minicluster</artifactId>
+      <version>${hadoopMRVersion}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>
